@@ -4450,6 +4450,7 @@ button.close {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  width: auto;
   padding: 1rem; }
 
 .modal-footer {
