@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
-  res.header.set("ngrok-skip-browser-warning", "1231");
   if (req.method === "OPTIONS") {
     res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
     return res.status(200).jason({});
