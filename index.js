@@ -66,7 +66,7 @@ app.post("/contact", (req, res) => {
 });
 
 app.listen(8080, '0.0.0.0', function() {
-  console.log('Listening to port:  ' + 80);
+  console.log('Listening to port:  ' + 8080);
 });
 
 
