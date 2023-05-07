@@ -15,7 +15,7 @@ const options = {
   cert: fs.readFileSync('cert.pem')
 }
 
-const PORT = process.env.PORT || 8080
+//const PORT = process.env.PORT || 8080
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -78,8 +78,8 @@ app.post("/contact", (req, res) => {
 });
 
 const server = http.createServer(app);
-server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+server.listen('8080', () => {
+    console.log(`Server is running on port 8080`);
 });
 
 //https.createServer(options, app).listen(PORT, console.log(`server runs on port ${PORT}`))
