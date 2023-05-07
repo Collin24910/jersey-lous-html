@@ -1,4 +1,8 @@
+
 const express = require("express");
+const https = require("https");
+const http = require("http");
+const fs = require("fs");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const app = express();
@@ -6,9 +10,17 @@ const path = require("path");
 const { set } = require("forever/lib/forever/cli");
 const router = express.Router();
 
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+}
+
+const PORT = process.env.PORT || 8080
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -65,9 +77,15 @@ app.post("/contact", (req, res) => {
   });
 });
 
-app.listen(8080, function() {
-  console.log('Listening to port:  ' + 8080);
+const server = http.createServer(app);
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
+
+//https.createServer(options, app).listen(PORT, console.log(`server runs on port ${PORT}`))
+//app.listen(8080, function() {
+//  console.log('Listening to port:  ' + 8080);
+//});
 
 
 
