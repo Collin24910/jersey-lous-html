@@ -79,7 +79,7 @@ app.post("/contact", (req, res) => {
 
 const server = http.createServer(app);
 server.listen('80', () => {
-    console.log(`Server is running on port 8080`);
+    console.log(`Server is running on port 80`);
 });
 
 //https.createServer(options, app).listen(PORT, console.log(`server runs on port ${PORT}`))
