@@ -77,12 +77,12 @@ app.post("/contact", (req, res) => {
   });
 });
 
-//const server = http.createServer(app);
-//server.listen(PORT, () => {
-//    console.log(`Server is running on port ${PORT}`);
-//});
+const server = http.createServer(app);
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
-https.createServer(options, app).listen(PORT, console.log(`server runs on port ${PORT}`))
+//https.createServer(options, app).listen(PORT, console.log(`server runs on port ${PORT}`))
 //app.listen(8080, function() {
 //  console.log('Listening to port:  ' + 8080);
 //});
